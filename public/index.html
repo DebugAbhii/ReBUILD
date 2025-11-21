@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ReBUILD — Prompt → Generator (UI)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>ReBUILD — Prompt → Generator (UI)</h1>
+    <p class="sub">Enter a prompt, send to backend, and preview the returned html / css / js.</p>
+  </header>
+
+  <main class="container">
+    <!-- Prompt area -->
+    <section class="prompt-area">
+      <label for="promptInput">Prompt</label>
+      <textarea id="promptInput" placeholder="Describe the web component / page you want (e.g. 'A simple landing page with hero, CTA and responsive styles')"></textarea>
+      <div class="prompt-controls">
+        <button id="generateBtn" type="button">Generate</button>
+        <span id="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <!-- Editors -->
+    <section class="inputs">
+      <div class="editor">
+        <div class="editor-title">HTML</div>
+        <textarea id="htmlInput" placeholder="Generated HTML will appear here..."></textarea>
+      </div>
+
+      <div class="editor">
+        <div class="editor-title">CSS</div>
+        <textarea id="cssInput" placeholder="Generated CSS will appear here..."></textarea>
+      </div>
+
+      <div class="editor">
+        <div class="editor-title">JS</div>
+        <textarea id="jsInput" placeholder="Generated JS will appear here..."></textarea>
+      </div>
+    </section>
+
+    <!-- Previews -->
+    <section class="previews">
+      <div class="preview-pane">
+        <div class="pane-title">HTML Preview</div>
+        <iframe id="htmlPreview" title="HTML Preview"></iframe>
+      </div>
+
+      <div class="preview-pane">
+        <div class="pane-title">CSS Preview</div>
+        <iframe id="cssPreview" title="CSS Preview"></iframe>
+      </div>
+
+      <div class="preview-pane">
+        <div class="pane-title">JS Preview</div>
+        <iframe id="jsPreview" title="JS Preview"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
